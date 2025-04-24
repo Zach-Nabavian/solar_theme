@@ -43,3 +43,14 @@ solar_system_palette <- c(
 scale_color_solar_system <- function() {
   ggplot2::scale_color_manual(values = solar_system_palette)
 }
+
+geom_glow_line <- function(mapping = NULL, data = NULL, 
+                           color_main = "white", color_glow = "white",
+                           size_main = 1.5, size_glow = 3, alpha_glow = 0.2, ...) {
+  list(
+    geom_line(mapping = mapping, data = data, 
+              size = size_glow, color = color_glow, alpha = alpha_glow, ...),
+    geom_line(mapping = mapping, data = data, 
+              size = size_main, color = color_main, ...)
+  )
+}
