@@ -3,7 +3,7 @@ library(ggplot2)
 #' Custom ggplot2 Theme with Solar System Colors
 #'
 #' A dark space-themed ggplot2 theme with planetary colors.
-solar <- function() {
+theme_solar <- function() {
   ggplot2::theme_minimal() +
     ggplot2::theme(
       text = ggplot2::element_text(family = "Arial", size = 12),
