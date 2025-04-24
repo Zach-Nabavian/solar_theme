@@ -43,5 +43,3 @@ solar_system_palette <- c(
 scale_color_solar_system <- function() {
   ggplot2::scale_color_manual(values = solar_system_palette)
 }
-
-install_github("https://github.com/Zach-Nabavian/solar_theme")
