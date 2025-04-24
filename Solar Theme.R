@@ -7,9 +7,9 @@ solar <- function() {
   ggplot2::theme_minimal() +
     ggplot2::theme(
       text = ggplot2::element_text(family = "Arial", size = 12),
-      plot.title = ggplot2::element_text(size = 14, face = "bold", color = "white"),
-      axis.text = ggplot2::element_text(size = 10, color = "white"),
-      axis.title = ggplot2::element_text(size = 12, color = "white"),
+      plot.title = ggplot2::element_text(size = 15, face = "bold", color = "white"),
+      axis.text = ggplot2::element_text(size = 14, color = "white"),
+      axis.title = ggplot2::element_text(size = 15, color = "white"),
       panel.grid.major = ggplot2::element_line(color = "gray80"),
       panel.grid.minor = ggplot2::element_line(color = "gray90"),
       panel.background = ggplot2::element_rect(fill = "black", color = NA),
@@ -44,3 +44,4 @@ scale_color_solar_system <- function() {
   ggplot2::scale_color_manual(values = solar_system_palette)
 }
 
+install_github("https://github.com/Zach-Nabavian/solar_theme")
