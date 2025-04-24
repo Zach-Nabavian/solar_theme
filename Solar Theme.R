@@ -6,10 +6,10 @@ library(ggplot2)
 theme_solar <- function() {
   ggplot2::theme_minimal() +
     ggplot2::theme(
-      text = ggplot2::element_text(family = "Arial", size = 12),
-      plot.title = ggplot2::element_text(size = 15, face = "bold", color = "white"),
-      axis.text = ggplot2::element_text(size = 14, color = "white"),
-      axis.title = ggplot2::element_text(size = 15, color = "white"),
+      text = ggplot2::element_text(family = "Arial", size = 15),
+      plot.title = ggplot2::element_text(size = 24, face = "bold", color = "white"),
+      axis.text = ggplot2::element_text(size = 18, color = "white"),
+      axis.title = ggplot2::element_text(size = 18, color = "white"),
       panel.grid.major = ggplot2::element_line(color = "gray80"),
       panel.grid.minor = ggplot2::element_line(color = "gray90"),
       panel.background = ggplot2::element_rect(fill = "black", color = NA),
