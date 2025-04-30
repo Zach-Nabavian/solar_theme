@@ -38,21 +38,6 @@ solar_system_palette <- c(
   "Space"       = "#000000"
 )
 
-solar_colors <- function() {
-  c(
-    "Mercury"     = "#BEBEBE",
-    "Venus"       = "#EEDC82",
-    "Earth Blue"  = "#2D68C4",
-    "Earth Green" = "#4CAF50",
-    "Mars"        = "#D14A28",
-    "Jupiter"     = "#C98C5A",
-    "Saturn"      = "#F5DEB3",
-    "Uranus"      = "#AFEEEE",
-    "Neptune"     = "#4169E1",
-    "Sun"         = "#FFD700",
-    "Space"       = "#000000"
-  )
-}
 
 #' Solar System Color Scale
 #'
@@ -61,51 +46,4 @@ scale_color_solar_system <- function() {
   ggplot2::scale_color_manual(values = solar_system_palette)
 }
 
-geom_glow <- function(geom_func, 
-                      mapping = NULL, data = NULL,
-                      color_main = "white", color_glow = "white",
-                      size_main = 1.5, size_glow = 3,
-                      alpha_glow = 0.2, ...) {
-  list(
-    do.call(geom_func, c(list(mapping = mapping, data = data,
-                              size = size_glow, color = color_glow,
-                              alpha = alpha_glow), list(...))),
-    do.call(geom_func, c(list(mapping = mapping, data = data,
-                              size = size_main, color = color_main), list(...)))
-  )
-}
 
-#' Glowing line layer wrapper
-#'
-#' @param ... Arguments passed to geom_line()
-#' @param glow_colour Colour of the glow
-#' @param sigma Softness of the glow (higher = blurrier)
-#' @param expand Glow spread amount
-#'
-#' @return A ggplot2 layer with outer glow applied
-#' @export
-geom_glow_line <- function(..., glow_colour = "white", sigma = 3, expand = 2) {
-  ggfx::with_outer_glow(
-    ggplot2::geom_line(...),
-    colour = glow_colour,
-    sigma = sigma,
-    expand = expand
-  )
-}
-
-#' Glowing point layer wrapper
-#' @export
-geom_glow_point <- function(..., glow_colour = "white", sigma = 2, expand = 1) {
-  ggfx::with_outer_glow(
-    ggplot2::geom_point(...),
-    colour = glow_colour,
-    sigma = sigma,
-    expand = expand
-  )
-}
-
-#' Custom color scale for solar palette
-#' @export
-scale_color_solar <- function(...) {
-  ggplot2::scale_color_manual(values = solar_colors(), ...)
-}
