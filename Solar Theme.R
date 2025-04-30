@@ -38,6 +38,22 @@ solar_system_palette <- c(
   "Space"       = "#000000"
 )
 
+solar_colors <- function() {
+  c(
+    "Mercury"     = "#BEBEBE",
+    "Venus"       = "#EEDC82",
+    "Earth Blue"  = "#2D68C4",
+    "Earth Green" = "#4CAF50",
+    "Mars"        = "#D14A28",
+    "Jupiter"     = "#C98C5A",
+    "Saturn"      = "#F5DEB3",
+    "Uranus"      = "#AFEEEE",
+    "Neptune"     = "#4169E1",
+    "Sun"         = "#FFD700",
+    "Space"       = "#000000"
+  )
+}
+
 #' Solar System Color Scale
 #'
 #' A ggplot2 scale for using the solar system colors.
@@ -91,5 +107,5 @@ geom_glow_point <- function(..., glow_colour = "white", sigma = 2, expand = 1) {
 #' Custom color scale for solar palette
 #' @export
 scale_color_solar <- function(...) {
-  ggplot2::scale_color_manual(values = solar_system_palette(), ...)
+  ggplot2::scale_color_manual(values = solar_colors(), ...)
 }
