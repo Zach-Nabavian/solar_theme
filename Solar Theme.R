@@ -1,4 +1,5 @@
 library(ggplot2)
+library(ggfx)
 
 #' Custom ggplot2 Theme with Solar System Colors
 #'
@@ -56,4 +57,39 @@ geom_glow <- function(geom_func,
     do.call(geom_func, c(list(mapping = mapping, data = data,
                               size = size_main, color = color_main), list(...)))
   )
+}
+
+#' Glowing line layer wrapper
+#'
+#' @param ... Arguments passed to geom_line()
+#' @param glow_colour Colour of the glow
+#' @param sigma Softness of the glow (higher = blurrier)
+#' @param expand Glow spread amount
+#'
+#' @return A ggplot2 layer with outer glow applied
+#' @export
+geom_glow_line <- function(..., glow_colour = "white", sigma = 3, expand = 2) {
+  ggfx::with_outer_glow(
+    ggplot2::geom_line(...),
+    colour = glow_colour,
+    sigma = sigma,
+    expand = expand
+  )
+}
+
+#' Glowing point layer wrapper
+#' @export
+geom_glow_point <- function(..., glow_colour = "white", sigma = 2, expand = 1) {
+  ggfx::with_outer_glow(
+    ggplot2::geom_point(...),
+    colour = glow_colour,
+    sigma = sigma,
+    expand = expand
+  )
+}
+
+#' Custom color scale for solar palette
+#' @export
+scale_color_solar <- function(...) {
+  ggplot2::scale_color_manual(values = your_custom_palette(), ...)
 }
