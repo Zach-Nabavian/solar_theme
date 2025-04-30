@@ -91,5 +91,5 @@ geom_glow_point <- function(..., glow_colour = "white", sigma = 2, expand = 1) {
 #' Custom color scale for solar palette
 #' @export
 scale_color_solar <- function(...) {
-  ggplot2::scale_color_manual(values = your_custom_palette(), ...)
+  ggplot2::scale_color_manual(values = solar_system_palette(), ...)
 }
