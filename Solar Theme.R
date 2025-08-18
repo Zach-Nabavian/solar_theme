@@ -9,7 +9,7 @@ theme_solar <- function() {
       text = ggplot2::element_text(family = "Arial", size = 15),
       plot.title = ggplot2::element_text(size = 24, face = "bold", color = "white"),
       plot.subtitle    = element_text(size = 20, color = "white", margin = margin(b = 10)),
-      axis.text = ggplot2::element_text(size = 18, color = "white"),
+      axis.text = ggplot2::element_text(size = 15, color = "white"),
       axis.title = ggplot2::element_text(size = 18, color = "white"),
       panel.grid.major = ggplot2::element_line(color = "gray80"),
       panel.grid.minor = ggplot2::element_line(color = "gray90"),
