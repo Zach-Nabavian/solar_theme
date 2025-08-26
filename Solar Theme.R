@@ -23,7 +23,8 @@ theme_solar <- function() {
         size = 10,         # adjust size here
         hjust = 1,         # right-align
         face = "italic"    # optional style
-      )
+      ),
+      plot.margin = ggplot2::margin(10, 10, 20, 10)  # <-- add bottom space
     )
 }
 
