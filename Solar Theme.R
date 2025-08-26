@@ -21,10 +21,10 @@ theme_solar <- function() {
       plot.caption = ggplot2::element_text(
         color = "white",   # visible against black
         size = 10,         # adjust size here
-        hjust = 1,         # right-align
+        hjust = 0,         # left-align
         face = "italic"    # optional style
       ),
-      plot.margin = ggplot2::margin(10, 10, 20, 10)  # <-- add bottom space
+      plot.margin = ggplot2::margin(10, 10, 30, 10)  # <-- add bottom space
     )
 }
 
