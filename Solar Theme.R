@@ -24,6 +24,7 @@ theme_solar <- function() {
         hjust = 0,         # left-align
         face = "italic"    # optional style
       ),
+      plot.caption.position = "plot",   # <- this ensures caption respects hjust
       plot.margin = ggplot2::margin(10, 10, 30, 10)  # <-- add bottom space
     )
 }
