@@ -17,7 +17,13 @@ theme_solar <- function() {
       plot.background = ggplot2::element_rect(fill = "black", color = NA),
       legend.background = ggplot2::element_rect(fill = "black"),
       legend.text = ggplot2::element_text(color = "white"),
-      legend.title = ggplot2::element_text(color = "white")
+      legend.title = ggplot2::element_text(color = "white"),
+      plot.caption = ggplot2::element_text(
+        color = "white",   # visible against black
+        size = 10,         # adjust size here
+        hjust = 1,         # right-align
+        face = "italic"    # optional style
+      )
     )
 }
 
